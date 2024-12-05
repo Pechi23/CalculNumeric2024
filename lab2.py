@@ -34,9 +34,9 @@ def jacobi_method(A, b, x0, epsilon, max_iterations):
 # Example: Solve the system using the Jacobi method
 def example_jacobi():
     A = np.array([
-        [5, 2, 1],
-        [1, 6, 2],
-        [1, 2, 10]
+        [5, 1, 1],
+        [1, 6, 4],
+        [1, 1, 10]
     ], dtype=float)
     b = np.array([10, 4, -7], dtype=float)
     x0 = np.zeros_like(b)
@@ -85,9 +85,9 @@ def gauss_seidel_method(A, b, x0, epsilon, max_iterations):
 # Example: Solve the system using the Gauss-Seidel method
 def example_gauss_seidel():
     A = np.array([
-        [5, 2, 1],
-        [1, 6, 2],
-        [1, 2, 10]
+        [5, 1, 1],
+        [1, 6, 4],
+        [1, 1, 10]
     ], dtype=float)
     b = np.array([10, 4, -7], dtype=float)
     x0 = np.zeros_like(b)

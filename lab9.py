@@ -68,7 +68,7 @@ def visualize_newton(x, y, x_eval, y_func=None):
     """
     y_poly = newton_polynomial(x, y, x_eval)
 
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(30, 10))
 
     # Plot original function if available
     if y_func:
@@ -92,8 +92,8 @@ def visualize_newton(x, y, x_eval, y_func=None):
 # Example Usage
 if __name__ == "__main__":
     # Example 1 from the problem
-    x = [1.0, 1.1, 1.3, 1.5, 1.6]  # Nodes
-    y = [1.0, 1.032, 1.091, 1.145, 1.17]  # Function values (f(x))
+    x = [1, 1.1, 1.3, 1.5, 1.6]  # Nodes
+    y = [1, 1.032, 1.091, 1.145, 1.17]  # Function values (f(x))
     x_eval = np.linspace(1.0, 1.6, 500)  # Points to evaluate the polynomial
     visualize_newton(x, y, x_eval)
 

@@ -25,12 +25,12 @@ def hermite_interpolation(a, b, fa, fb, dfa, dfb, x_values):
     return np.array(y_values)
 
 # Example 1
-a = np.pi / 4
-b = 3 * np.pi / 4
-fa = 1 / np.sqrt(2)
-fb = -1 / np.sqrt(2)
-dfa = -1 / np.sqrt(2)
-dfb = -1 / np.sqrt(2)
+a = np.pi / 6
+b = np.pi / 2
+fa = 1 / 2
+fb = 1
+dfa = np.sqrt(3) / 2
+dfb = 0
 
 # Define x values for evaluation
 x_vals = np.linspace(a, b, 1000)

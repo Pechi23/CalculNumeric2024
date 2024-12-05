@@ -37,13 +37,13 @@ def gauss_seidel_nonlinear(F, initial_guess, epsilon, max_iterations):
 
 def example_1():
     # Define the nonlinear system of equations as functions
-    F1 = lambda x, y, z: np.sqrt(0.5 * (y * z + 5 * z - 1))
+    F1 = lambda x, y, z: np.sqrt(0.5 * (y * z + 5 * x - 1))
     F2 = lambda x, y, z: np.sqrt(2 * x + np.log(z))
-    F3 = lambda x, y, z: np.sqrt(x + 2 * y + 8)
+    F3 = lambda x, y, z: np.sqrt(x * y + 2 * z + 8)
     
     F = [F1, F2, F3]
     initial_guess = [10, 10, 10]
-    epsilon = 0.001
+    epsilon = 0.0000000000000001
     max_iterations = 100
     
     solution, iterations = gauss_seidel_nonlinear(F, initial_guess, epsilon, max_iterations)

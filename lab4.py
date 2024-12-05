@@ -48,8 +48,8 @@ def example_1():
 
 # Example 2: Solving 5x^2 - 5x + 1 = 0
 def example_2():
-    f = lambda x: 5 * x**2 - 5 * x + 1  # Define f(x)
-    df = lambda x: 10 * x - 5  # Define f'(x)
+    f = lambda x: x**5 - 5 * x + 1  # Define f(x)
+    df = lambda x:  5 * x**4 - 5  # Define f'(x)
     x0 = 0.2  # Initial guess
     epsilon = 1e-4  # Convergence tolerance
     max_iterations = 100  # Maximum iterations

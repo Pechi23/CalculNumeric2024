@@ -17,7 +17,7 @@ def successive_approximation(F, G, x0, y0, epsilon, max_iterations):
     """
     x, y = x0, y0
     for iteration in range(1, max_iterations + 1):
-        x_new = F(y)
+        x_new = F(x, y)
         y_new = G(x_new)
         
         # Check for convergence
@@ -33,7 +33,7 @@ def successive_approximation(F, G, x0, y0, epsilon, max_iterations):
 # y = sqrt(x + 3 * log(x))
 
 def example_1():
-    F = lambda y: np.sqrt((y + 5) / 2)  # Define F(y)
+    F = lambda x,y: np.sqrt((y + 5) / 2)  # Define F(y)
     G = lambda x: np.sqrt(x + 3 * np.log(x))  # Define G(x)
     
     x0, y0 = 3.5, 2.2  # Initial guess
@@ -52,7 +52,7 @@ def example_1():
 # y = 2 / x
 
 def example_2():
-    F = lambda y: np.sqrt(5 - y**2)  # Define F(y)
+    F = lambda x,y: np.sqrt(5 - y**2)  # Define F(y)
     G = lambda x: 2 / x  # Define G(x)
     
     x0, y0 = 2, 1  # Initial guess
@@ -77,7 +77,7 @@ def visualize_convergence(F, G, x0, y0, epsilon, max_iterations):
     x, y = x0, y0
     
     for _ in range(max_iterations):
-        x_new = F(y)
+        x_new = F(x,y)
         y_new = G(x_new)
         
         x_vals.append(x_new)
@@ -104,14 +104,14 @@ def visualize_convergence(F, G, x0, y0, epsilon, max_iterations):
 
 # Visualize Example 1
 visualize_convergence(
-    lambda y: np.sqrt((y + 5) / 2),
-    lambda x: np.sqrt(x + 3 * np.log(x)),
+    lambda x,y: np.sqrt((x * (y + 5) -1 ) / 2),
+    lambda x: np.sqrt(x + 3 * np.log10(x)),
     x0=3.5, y0=2.2, epsilon=1e-4, max_iterations=100
 )
 
 # Visualize Example 2
 visualize_convergence(
-    lambda y: np.sqrt(5 - y**2),
+    lambda x,y: np.sqrt(5 - y**2),
     lambda x: 2 / x,
     x0=2, y0=1, epsilon=1e-4, max_iterations=100
 )
