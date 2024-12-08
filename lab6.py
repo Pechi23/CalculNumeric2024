@@ -29,12 +29,12 @@ def successive_approximation(F, G, x0, y0, epsilon, max_iterations):
     raise ValueError("Method did not converge within the maximum number of iterations")
 
 # Example 1: Solving the system
-# x = sqrt((y + 5) / 2)
-# y = sqrt(x + 3 * log(x))
+# x = sqrt((x * (y + 5) -1 ) / 2)
+# y = sqrt(x + 3 * log10(x))
 
 def example_1():
-    F = lambda x,y: np.sqrt((y + 5) / 2)  # Define F(y)
-    G = lambda x: np.sqrt(x + 3 * np.log(x))  # Define G(x)
+    F = lambda x,y: np.sqrt(((x * (y + 5) -1 ) / 2))  # Define F(y)
+    G = lambda x: np.sqrt(x + 3 * np.log10(x))  # Define G(x)
     
     x0, y0 = 3.5, 2.2  # Initial guess
     epsilon = 1e-4  # Convergence tolerance
@@ -104,7 +104,7 @@ def visualize_convergence(F, G, x0, y0, epsilon, max_iterations):
 
 # Visualize Example 1
 visualize_convergence(
-    lambda x,y: np.sqrt((x * (y + 5) -1 ) / 2),
+    lambda x,y: np.sqrt(((x * (y + 5) -1 ) / 2)),
     lambda x: np.sqrt(x + 3 * np.log10(x)),
     x0=3.5, y0=2.2, epsilon=1e-4, max_iterations=100
 )
