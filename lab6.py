@@ -37,7 +37,7 @@ def example_1():
     G = lambda x: np.sqrt(x + 3 * np.log10(x))  # Define G(x)
     
     x0, y0 = 3.5, 2.2  # Initial guess
-    epsilon = 1e-4  # Convergence tolerance
+    epsilon = 1e-12  # Convergence tolerance
     max_iterations = 100  # Maximum iterations
 
     try:
@@ -55,7 +55,7 @@ def example_2():
     F = lambda x,y: np.sqrt(5 - y**2)  # Define F(y)
     G = lambda x: 2 / x  # Define G(x)
     
-    x0, y0 = 2, 1  # Initial guess
+    x0, y0 = 2.1, 1.1  # Initial guess
     epsilon = 1e-4  # Convergence tolerance
     max_iterations = 100  # Maximum iterations
 
